@@ -17,7 +17,7 @@
 
 #include <Windows.h>
 #include <string>
-#include <internal/unone-internal.h>
+#include "internal/unone-internal.h"
 
 #ifndef NT_ARCH
 #define NT_ARCH 2

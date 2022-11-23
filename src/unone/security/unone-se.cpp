@@ -28,6 +28,7 @@
 #include <time/unone-tm.h>
 #include "unone-se.h"
 
+#ifndef VS2022
 #ifndef WINTRUST_SIGNATURE_SETTINGS
 typedef struct WINTRUST_SIGNATURE_SETTINGS_ {
 	DWORD                  cbStruct;
@@ -41,6 +42,7 @@ typedef struct WINTRUST_SIGNATURE_SETTINGS_ {
 #define WSS_VERIFY_SPECIFIC         0x00000001  
 //Puts count of secondary signatures in WINTRUST_SIGNATURE_SETTINGS.cSecondarySigs
 #define WSS_GET_SECONDARY_SIG_COUNT 0x00000002
+#endif
 #endif
 
 namespace {
