@@ -22,32 +22,32 @@
     <ProjectGuid>{EB561C56-54CC-4CB1-94F5-A6E3429F6275}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>knonetest</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -85,8 +85,8 @@
     <TargetName>$(ProjectName)-$(Configuration)$(PlatformArchitecture)</TargetName>
     <IntDir>intermediate-files\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)..\build\bin\</OutDir>
-    <IncludePath>$(WDKPATH)\INC\api;$(WDKPATH)\INC\crt;$(WDKPATH)\INC\ddk;$(IncludePath)</IncludePath>
-    <LibraryPath>$(WDKPATH)\lib\win7\amd64;$(WDKPATH)\lib\crt\amd64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(WDKPATH)\Include\10.0.22621.0\km;$(WDKPATH)\INC\api;$(WDKPATH)\INC\crt;$(WDKPATH)\INC\ddk;$(IncludePath)</IncludePath>
+    <LibraryPath>$(WDKPATH)\Lib\10.0.22621.0\km\x64;$(WDKPATH)\amd64;$(LibraryPath)</LibraryPath>
     <GenerateManifest>false</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -105,8 +105,8 @@
     <TargetName>$(ProjectName)-$(Configuration)$(PlatformArchitecture)</TargetName>
     <IntDir>intermediate-files\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)..\build\bin\</OutDir>
-    <IncludePath>$(WDKPATH)\INC\api;$(WDKPATH)\INC\crt;$(WDKPATH)\INC\ddk;$(IncludePath)</IncludePath>
-    <LibraryPath>$(WDKPATH)\lib\win7\amd64;$(WDKPATH)\lib\crt\amd64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(WDKPATH)\Include\10.0.22621.0\km;$(WDKPATH)\INC\api;$(WDKPATH)\INC\crt;$(WDKPATH)\INC\ddk;$(IncludePath)</IncludePath>
+    <LibraryPath>$(WDKPATH)\Lib\10.0.22621.0\km\x64;$(WDKPATH)\x64;$(LibraryPath)</LibraryPath>
     <GenerateManifest>false</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -156,7 +156,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EntryPointSymbol>DriverEntry</EntryPointSymbol>
       <AdditionalDependencies>ntoskrnl.lib;hal.lib;ntstrsafe.lib;tdi.lib;bufferoverflowK.lib;knone-$(Configuration)$(PlatformArchitecture).lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir);$(WDKPATH)\x64</AdditionalLibraryDirectories>
       <Driver>Driver</Driver>
       <RandomizedBaseAddress>
       </RandomizedBaseAddress>

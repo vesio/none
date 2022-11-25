@@ -14,8 +14,8 @@
 **
 ****************************************************************************/
 #pragma once
-#include <common/knone-common.h>
-#include <internal/knone-internal.h>
+#include "common/knone-common.h"
+#include "internal/knone-internal.h"
 namespace KNONE {
 
 KNONE_API VOID MmEnableWP();
